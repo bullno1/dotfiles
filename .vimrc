@@ -22,6 +22,8 @@ nmap <leader>p :CtrlP<CR>
 
 " --- General ---
 set history=700
+" Always use unix line ending
+set ff=unix
 
 set guioptions-=m
 set guioptions-=T
