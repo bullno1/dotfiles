@@ -38,7 +38,11 @@ set nowb
 set noswapfile
 
 set nowrap
-set clipboard=unnamedplus
+if has("win32")
+	set clipboard=unnamed
+else
+	set clipboard=unnamedplus
+endif
 
 nmap <leader>sv :source\ $MYVIMRC<Cr>
 
@@ -47,6 +51,8 @@ set number
 set ruler
 set showcmd
 set shellslash
+
+set guifont=Consolas:h12
 
 " Unicode
 if has("multi_byte")
