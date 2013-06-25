@@ -10,6 +10,7 @@ Bundle 'vim-scripts/Wombat'
 Bundle 'kien/ctrlp.vim'
 Bundle 'vim-scripts/YankRing.vim'
 Bundle 'sjl/gundo.vim'
+Bundle 'vim-scripts/AutoComplPop'
 Bundle 'jimenezrick/vimerl'
 
 filetype plugin indent on
