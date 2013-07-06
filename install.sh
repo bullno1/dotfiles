@@ -7,3 +7,4 @@ function link()
 }
 
 link .vimrc ~/.vimrc
+link .vrapperrc ~/.vrapperrc
