@@ -47,7 +47,9 @@ else
 	set clipboard=unnamedplus
 endif
 
+" Quick reload of .vimrc
 nmap <leader>sv :source\ $MYVIMRC<Cr>
+set wildignore+=*.so,*.swp,*.beam,.git,.hg,.svn
 
 " --- Interface ---
 set number
@@ -55,7 +57,11 @@ set ruler
 set showcmd
 set shellslash
 
-set guifont=Consolas:h12
+if has("unix")
+	set guifont=Consolas\ 12
+else
+	set guifont=Consolas:h12
+endif
 
 " Unicode
 if has("multi_byte")
