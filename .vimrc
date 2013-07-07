@@ -136,3 +136,16 @@ set background=dark
 "--- Tab ---
 set tabstop=4 softtabstop=4 shiftwidth=4 noexpandtab
 nmap <leader>p :CtrlP<CR>
+
+"--- Plugin settings ---
+function g:acp_erlangOmni(context)
+	return a:context =~ '\k:\k\{' . 0 . ',}$'
+endfunction
+
+let g:acp_behavior = {
+	\'erlang' : [{
+		\'command' : "\<C-x>\<C-o>",
+		\'meets'   : 'g:acp_erlangOmni',
+		\'repeat'  : 0
+	\}]
+\}
