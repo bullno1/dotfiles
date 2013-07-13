@@ -8,3 +8,6 @@ function link()
 
 link .vimrc ~/.vimrc
 link .vrapperrc ~/.vrapperrc
+link .zprofile ~/.zprofile
+link .zshrc ~/.zshrc
+link gpg-agent.conf ~/.gnupg/gpg-agent.conf
