@@ -12,6 +12,7 @@ Bundle 'vim-scripts/YankRing.vim'
 Bundle 'sjl/gundo.vim'
 Bundle 'vim-scripts/AutoComplPop'
 Bundle 'jimenezrick/vimerl'
+Bundle 'christoomey/vim-tmux-navigator'
 
 filetype plugin indent on
 
