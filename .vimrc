@@ -14,6 +14,7 @@ Bundle 'christoomey/vim-tmux-navigator'
 Bundle 'nanotech/jellybeans.vim'
 Bundle 'Shougo/neocomplcache.vim'
 Bundle 'scrooloose/nerdcommenter'
+Bundle 'groenewege/vim-less'
 
 filetype plugin indent on
 
