@@ -13,6 +13,7 @@ Bundle 'jimenezrick/vimerl'
 Bundle 'christoomey/vim-tmux-navigator'
 Bundle 'nanotech/jellybeans.vim'
 Bundle 'Shougo/neocomplcache.vim'
+Bundle 'scrooloose/nerdcommenter'
 
 filetype plugin indent on
 
@@ -59,7 +60,7 @@ set showcmd
 set shellslash
 
 if has("unix")
-	set guifont=Consolas\ 12
+	set guifont=Hermit\ Medium\ 11
 else
 	set guifont=Consolas:h12
 endif
