@@ -57,3 +57,7 @@ case "$TERM" in
 	'screen') TERM=screen-256color;;
 esac
 export TERM
+
+function ssht(){
+	ssh $* -t 'tmux a || tmux || /bin/bash'
+}
