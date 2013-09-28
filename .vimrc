@@ -15,6 +15,7 @@ Bundle 'nanotech/jellybeans.vim'
 Bundle 'Shougo/neocomplcache.vim'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'groenewege/vim-less'
+Bundle 'tikhomirov/vim-glsl'
 
 filetype plugin indent on
 
