@@ -58,7 +58,12 @@ case "$TERM" in
 esac
 export TERM
 
+# Make Ctrl+S work
 stty -ixon
+
+# Autostart tmux if the shell is interactive
+[[ $- != *i* ]] && return
+[[ -z "$TMUX" ]] && exec tmux
 
 function ssht(){
 	ssh $* -t 'tmux a || tmux || /bin/bash'
