@@ -44,6 +44,8 @@ plugins=(git vagrant)
 
 source $ZSH/oh-my-zsh.sh
 
+unsetopt autonamedirs
+
 # Customize to your needs...
 export EDITOR=vim
 export ERL_LIBS=~/Libraries
