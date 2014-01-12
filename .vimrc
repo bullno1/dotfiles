@@ -16,6 +16,8 @@ Bundle 'Valloric/YouCompleteMe'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'groenewege/vim-less'
 Bundle 'tikhomirov/vim-glsl'
+Bundle 'uarun/vim-protobuf'
+Bundle 'bling/vim-airline'
 
 filetype plugin indent on
 
@@ -140,3 +142,5 @@ set tabstop=4 softtabstop=4 shiftwidth=4 noexpandtab
 nmap <leader>p :CtrlP<CR>
 
 "--- Plugin settings ---
+let g:airline_theme='jellybeans'
+let g:airline#extensions#ctrlp#color_template = 'normal'
