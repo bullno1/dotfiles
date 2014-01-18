@@ -31,6 +31,8 @@ nmap <leader>p :CtrlP<CR>
 set history=700
 " Always use unix line ending
 set ff=unix
+" Always show status line
+set laststatus=2
 
 set guioptions-=m
 set guioptions-=T
