@@ -67,6 +67,13 @@ stty -ixon
 [[ $- != *i* ]] && return
 [[ -z "$TMUX" ]] && exec tmux
 
+# Convenient bindings
+
 function ssht(){
 	ssh $* -t 'tmux a || tmux || /bin/bash'
+}
+
+function activate-venv() {
+	VENVDIR=${1:-~/venv}
+	source $VENVDIR/bin/activate
 }
