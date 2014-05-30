@@ -60,6 +60,9 @@ case "$TERM" in
 esac
 export TERM
 
+# Use local scripts
+export PATH="$PATH:$HOME/bin"
+
 # Make Ctrl+S work
 stty -ixon
 
