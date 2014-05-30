@@ -1,23 +1,24 @@
 " --- Vundle ---
 set nocompatible               " be iMproved
 filetype off                   " required!
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
 
-Bundle 'gmarik/vundle'
-Bundle 'Lokaltog/vim-easymotion'
-Bundle 'kien/ctrlp.vim'
-Bundle 'vim-scripts/YankRing.vim'
-Bundle 'sjl/gundo.vim'
-Bundle 'jimenezrick/vimerl'
-Bundle 'christoomey/vim-tmux-navigator'
-Bundle 'nanotech/jellybeans.vim'
-Bundle 'Valloric/YouCompleteMe'
-Bundle 'scrooloose/nerdcommenter'
-Bundle 'groenewege/vim-less'
-Bundle 'tikhomirov/vim-glsl'
-Bundle 'uarun/vim-protobuf'
-Bundle 'bling/vim-airline'
+call vundle#begin()
+Plugin 'gmarik/Vundle.vim'
+Plugin 'Lokaltog/vim-easymotion'
+Plugin 'kien/ctrlp.vim'
+Plugin 'vim-scripts/YankRing.vim'
+Plugin 'sjl/gundo.vim'
+Plugin 'jimenezrick/vimerl'
+Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'nanotech/jellybeans.vim'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'groenewege/vim-less'
+Plugin 'tikhomirov/vim-glsl'
+Plugin 'uarun/vim-protobuf'
+Plugin 'bling/vim-airline'
+call vundle#end()
 
 filetype plugin indent on
 
