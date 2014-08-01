@@ -73,6 +73,10 @@ function activate-venv() {
 	source $VENVDIR/bin/activate
 }
 
+function stouch() {
+	mkdir -p "$(dirname "$1")" && touch "$1"
+}
+
 # Autostart tmux if the shell is interactive
 [[ $- != *i* ]] && return
 [[ -z "$TMUX" ]] && exec tmux
