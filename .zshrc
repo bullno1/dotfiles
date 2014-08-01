@@ -77,6 +77,8 @@ function stouch() {
 	mkdir -p "$(dirname "$1")" && touch "$1"
 }
 
+alias gitroot='cd $(git rev-parse --show-toplevel)'
+
 # Autostart tmux if the shell is interactive
 [[ $- != *i* ]] && return
 [[ -z "$TMUX" ]] && exec tmux
