@@ -62,10 +62,6 @@ export PATH="$PATH:$HOME/bin"
 # Make Ctrl+S work
 stty -ixon
 
-# Autostart tmux if the shell is interactive
-[[ $- != *i* ]] && return
-[[ -z "$TMUX" ]] && exec tmux
-
 # Convenient bindings
 
 function ssht(){
@@ -76,3 +72,7 @@ function activate-venv() {
 	VENVDIR=${1:-~/venv}
 	source $VENVDIR/bin/activate
 }
+
+# Autostart tmux if the shell is interactive
+[[ $- != *i* ]] && return
+[[ -z "$TMUX" ]] && exec tmux
