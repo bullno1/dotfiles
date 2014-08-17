@@ -40,7 +40,7 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git vagrant)
+plugins=(git vagrant zbell)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -55,6 +55,13 @@ case "$TERM" in
 	'screen') TERM=screen-256color;;
 esac
 export TERM
+
+zbell_ignore=($EDITOR $PAGER ls watch htop top ssh ssht iotop dstat vmstat nano emacs vi vimdiff bwm-ng less more fdisk sqlite3 wine ping traceroute tail tmux screen man powertop git)
+
+zbell_notify() {
+	type notify-send > /dev/null && \
+		notify-send -i terminal "Command completed:" $1
+}
 
 # Use local scripts
 export PATH="$PATH:$HOME/bin"
