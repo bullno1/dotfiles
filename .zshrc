@@ -56,7 +56,7 @@ case "$TERM" in
 esac
 export TERM
 
-zbell_ignore=($EDITOR $PAGER ls watch htop top ssh ssht iotop dstat vmstat nano emacs vi vimdiff bwm-ng less more fdisk sqlite3 wine ping traceroute tail tmux screen man powertop git)
+zbell_ignore=($EDITOR $PAGER ls watch htop top ssh ssht rlwrap iotop dstat vmstat nano emacs vi vimdiff bwm-ng less more fdisk sqlite3 wine ping traceroute tail tmux screen man powertop git ocaml)
 
 zbell_notify() {
 	type notify-send > /dev/null && \
