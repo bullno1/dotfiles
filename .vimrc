@@ -20,6 +20,10 @@ Plugin 'uarun/vim-protobuf'
 Plugin 'bling/vim-airline'
 call vundle#end()
 
+" merlin
+let s:merlin=substitute(system('opam config var share'),'\n$','','''') .  "/merlin"
+execute "set rtp+=".s:merlin."/vim"
+
 filetype plugin indent on
 
 " --- Plugin configurations ---
