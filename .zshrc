@@ -87,8 +87,10 @@ function stouch() {
 alias gitroot='cd $(git rev-parse --show-toplevel)'
 
 # Autostart tmux if the shell is interactive
-[[ $- != *i* ]] && return
-[[ -z "$TMUX" ]] && exec tmux
+if command -v tmux > /dev/null; then
+	[[ $- != *i* ]] && return
+	[[ -z "$TMUX" ]] && exec tmux
+fi
 
 # OPAM configuration
 if [ -f ~/.opam/opam-init/init.zsh ]; then
