@@ -20,9 +20,16 @@ Plugin 'uarun/vim-protobuf'
 Plugin 'bling/vim-airline'
 call vundle#end()
 
+" opam
+let g:opam_share = system("opam config var share")
+
 " merlin
-let s:merlin=substitute(system('opam config var share'),'\n$','','''') .  "/merlin"
+let s:merlin=substitute(opam_share,'\n$','','''') .  "/merlin"
 execute "set rtp+=".s:merlin."/vim"
+
+" ocp-indent
+let g:ocp_indent_vimfile = substitute(g:opam_share, '[\r\n]*$', '', '') . "/vim/syntax/ocp-indent.vim"
+autocmd FileType ocaml exec ":source " . g:ocp_indent_vimfile
 
 filetype plugin indent on
 

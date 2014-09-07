@@ -89,3 +89,8 @@ alias gitroot='cd $(git rev-parse --show-toplevel)'
 # Autostart tmux if the shell is interactive
 [[ $- != *i* ]] && return
 [[ -z "$TMUX" ]] && exec tmux
+
+# OPAM configuration
+if [ -f ~/.opam/opam-init/init.zsh ]; then
+	. ~/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
+fi
