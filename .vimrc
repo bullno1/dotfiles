@@ -18,6 +18,7 @@ Plugin 'groenewege/vim-less'
 Plugin 'tikhomirov/vim-glsl'
 Plugin 'uarun/vim-protobuf'
 Plugin 'bling/vim-airline'
+Plugin 'jpalardy/vim-slime'
 call vundle#end()
 
 " opam
@@ -38,6 +39,8 @@ filetype plugin indent on
 nnoremap <C-u> :GundoToggle<CR>
 " CtrlP
 nmap <leader>p :CtrlP<CR>
+" vim-slime
+let g:slime_target = "tmux"
 
 " --- General ---
 set history=700
