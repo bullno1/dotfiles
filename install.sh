@@ -8,7 +8,7 @@ function link()
 
 link .vimrc ~/.vimrc
 link .vrapperrc ~/.vrapperrc
-link .zprofile ~/.zprofile
 link .zshrc ~/.zshrc
 link .tmux.conf ~/.tmux.conf
 link gpg-agent.conf ~/.gnupg/gpg-agent.conf
+link .conkyrc ~/.conkyrc

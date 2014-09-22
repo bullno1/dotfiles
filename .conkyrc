@@ -1,0 +1,77 @@
+background no
+use_xft yes
+xftfont Hermit:normal:size=9
+xftalpha 0.8
+update_interval 5.0
+total_run_times 0
+own_window yes
+own_window_type override
+own_window_transparent yes
+own_window_hints undecorated,below,skip_taskbar,sticky,skip_pager
+double_buffer yes
+minimum_size 150 5
+draw_shades no
+draw_outline no
+draw_graph_borders yes
+stippled_borders 8
+border_width 1
+maximum_width 280
+default_color black
+alignment top_left
+gap_x 80
+gap_y 4
+no_buffers yes
+uppercase no
+cpu_avg_samples 2
+net_avg_samples 2
+override_utf8_locale no
+use_spacer none
+
+#Templates
+template0 ${font Hermit:bold:size=9}\1 ${hr 2}${font}
+template1 ${top name \1} ${alignr}${top cpu \1}
+template2 ${top_mem name \1} ${alignr}${top_mem mem \1}
+template3 Address: ${addr \1}\n${downspeedgraph \1 99cc33 006600}\nDownSpeed: $alignc ${downspeed \1} $alignr total: ${totaldown \1}\n${upspeedgraph \1 ffcc00 ff0000}\nUpSpeed: $alignc ${upspeed \1} $alignr total: ${totalup \1}
+
+TEXT
+${font Hermit:bold:size=9}$sysname $kernel $alignr $machine${hr 2}${font}
+Host:$alignr$nodename
+Uptime:$alignr$uptime
+
+${template0 Processors}
+${cpugraph cpu0 32,280 black darkgray}
+CPU1: ${cpu cpu1}% ${cpubar cpu1}
+CPU2: ${cpu cpu2}% ${cpubar cpu2}
+CPU3: ${cpu cpu3}% ${cpubar cpu2}
+CPU4: ${cpu cpu4}% ${cpubar cpu2}
+
+${template0 Memory}
+${alignc}$mem / $memmax ${alignr}$memperc%
+${membar 6}
+
+${template0 Swap}
+${alignc}$swap/$swapmax ${alignr}$swapperc%
+${swapbar 6}
+
+${template0 Disk}
+${alignc}${fs_used /} / ${fs_size /} $alignr ${fs_used_perc /}%
+${fs_bar 6 /}
+
+${template0 Top}
+Name ${alignr}CPU
+${template1 1}${color darkgray}
+${template1 2}
+${template1 3}
+${template1 4}${color}
+
+Name ${alignr} Mem
+${template2 1}${color darkgray}
+${template2 2}
+${template2 3}
+${template2 4}${color}
+
+${template0 Ethernet}
+${template3 enp5s0}
+
+${template0 Wifi}
+${template3 wlp3s0}
