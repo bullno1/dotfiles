@@ -1,11 +1,11 @@
-background no
+background yes
 use_xft yes
 xftfont Hermit:normal:size=9
 xftalpha 0.8
 update_interval 5.0
 total_run_times 0
 own_window yes
-own_window_type override
+own_window_type desktop
 own_window_transparent yes
 own_window_hints undecorated,below,skip_taskbar,sticky,skip_pager
 double_buffer yes
@@ -19,7 +19,7 @@ maximum_width 280
 default_color black
 alignment top_left
 gap_x 80
-gap_y 4
+gap_y 50
 no_buffers yes
 uppercase no
 cpu_avg_samples 2
@@ -39,7 +39,7 @@ Host:$alignr$nodename
 Uptime:$alignr$uptime
 
 ${template0 Processors}
-${cpugraph cpu0 32,280 black darkgray}
+${cpugraph cpu0 32,280 33ffff 0000ff}
 CPU1: ${cpu cpu1}% ${cpubar cpu1}
 CPU2: ${cpu cpu2}% ${cpubar cpu2}
 CPU3: ${cpu cpu3}% ${cpubar cpu2}

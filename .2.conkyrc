@@ -1,0 +1,36 @@
+background yes
+use_xft yes
+xftfont Hermit:normal:size=10
+xftalpha 0.8
+update_interval 5.0
+total_run_times 0
+own_window yes
+own_window_type desktop
+own_window_transparent yes
+own_window_hints undecorated,below,skip_taskbar,sticky,skip_pager
+double_buffer yes
+minimum_size 600 5
+draw_shades no
+draw_outline no
+draw_graph_borders yes
+stippled_borders 8
+border_width 1
+maximum_width 600
+default_color black
+alignment top_left
+gap_x 400
+gap_y 50
+no_buffers yes
+uppercase no
+cpu_avg_samples 2
+net_avg_samples 2
+override_utf8_locale no
+use_spacer none
+
+TEXT
+${font Hermit:bold:size=16}${execi 3600 date '+%A'}${font}
+
+${font Hermit:normal:size=12}${execi 3600 date '+%d %B, %Y'}${font}
+${font Hermit:normal:size=12}${execi 60   date '+%I:%M %p'}${font}
+
+${hr 2}

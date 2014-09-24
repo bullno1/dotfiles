@@ -12,3 +12,4 @@ link .zshrc ~/.zshrc
 link .tmux.conf ~/.tmux.conf
 link gpg-agent.conf ~/.gnupg/gpg-agent.conf
 link .conkyrc ~/.conkyrc
+link .2.conkyrc ~/.2.conkyrc
