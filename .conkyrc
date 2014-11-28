@@ -2,7 +2,7 @@ background yes
 use_xft yes
 xftfont Hermit:normal:size=9
 xftalpha 0.8
-update_interval 5.0
+update_interval 1.0
 total_run_times 0
 own_window yes
 own_window_type desktop
@@ -40,10 +40,10 @@ Uptime:$alignr$uptime
 
 ${template0 Processors}
 ${cpugraph cpu0 32,280 33ffff 0000ff}
-CPU1: ${cpu cpu1}% ${cpubar cpu1}
-CPU2: ${cpu cpu2}% ${cpubar cpu2}
-CPU3: ${cpu cpu3}% ${cpubar cpu2}
-CPU4: ${cpu cpu4}% ${cpubar cpu2}
+CPU1: ${alignr 190}${cpu cpu1}% ${cpubar cpu1}
+CPU2: ${alignr 190}${cpu cpu2}% ${cpubar cpu2}
+CPU3: ${alignr 190}${cpu cpu3}% ${cpubar cpu2}
+CPU4: ${alignr 190}${cpu cpu4}% ${cpubar cpu2}
 
 ${template0 Memory}
 ${alignc}$mem / $memmax ${alignr}$memperc%

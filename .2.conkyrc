@@ -9,7 +9,7 @@ own_window_type desktop
 own_window_transparent yes
 own_window_hints undecorated,below,skip_taskbar,sticky,skip_pager
 double_buffer yes
-minimum_size 600 5
+minimum_size 780 5
 draw_shades no
 draw_outline no
 draw_graph_borders yes
