@@ -66,6 +66,8 @@ zbell_notify() {
 # Use local scripts
 export PATH="$PATH:$HOME/bin"
 
+alias ls='ls --color=tty --group-directories-first'
+
 # Make Ctrl+S work
 stty -ixon
 
