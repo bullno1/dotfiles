@@ -19,6 +19,10 @@ Plugin 'tikhomirov/vim-glsl'
 Plugin 'uarun/vim-protobuf'
 Plugin 'bling/vim-airline'
 Plugin 'jpalardy/vim-slime'
+Plugin 'derekwyatt/vim-scala'
+Plugin 'lukerandall/haskellmode-vim'
+Plugin 'vim-scripts/DetectIndent'
+Plugin 'vim-scripts/django.vim'
 call vundle#end()
 
 " opam
@@ -41,6 +45,11 @@ nnoremap <C-u> :GundoToggle<CR>
 nmap <leader>p :CtrlP<CR>
 " vim-slime
 let g:slime_target = "tmux"
+" DetectIndent
+autocmd BufReadPost *.hs :DetectIndent
+let g:detectindent_preferred_indent = 4
+" vim-django
+autocmd BufReadPost *.dtl :set ft=htmldjango
 
 " --- General ---
 set history=700
