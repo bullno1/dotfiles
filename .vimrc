@@ -122,7 +122,6 @@ set ignorecase
 set smartcase
 set hlsearch
 set incsearch
-set lazyredraw
 set magic
 map <silent> <space> :noh<cr>
 
