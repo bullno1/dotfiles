@@ -172,3 +172,8 @@ nmap <leader>p :CtrlP<CR>
 let g:airline_theme='jellybeans'
 let g:airline#extensions#ctrlp#color_template = 'normal'
 nnoremap <leader>jd :YcmCompleter GoTo<CR>
+
+function! YRRunAfterMaps()
+    " Don't clobber the yank register when pasting over text in visual mode.
+    vnoremap p :<c-u>YRPaste 'p', 'v'<cr>gv:YRYankRange 'v'<cr>
+endfunction
