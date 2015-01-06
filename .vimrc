@@ -57,6 +57,8 @@ set history=700
 set ff=unix
 " Always show status line
 set laststatus=2
+" Show a color column
+set cc=80
 
 set guioptions-=m
 set guioptions-=T
