@@ -23,6 +23,7 @@ Plugin 'derekwyatt/vim-scala'
 Plugin 'lukerandall/haskellmode-vim'
 Plugin 'vim-scripts/DetectIndent'
 Plugin 'vim-scripts/django.vim'
+Plugin 'ntpeters/vim-better-whitespace'
 call vundle#end()
 
 " opam
