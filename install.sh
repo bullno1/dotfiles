@@ -1,9 +1,11 @@
 #!/bin/sh
-DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-function link()
+
+SCRIPT_PATH=`readlink -f $0`
+SCRIPT_DIR=`dirname $SCRIPT_PATH`
+link()
 {
-	rm $2
-	ln -s $DIR/$1 $2
+	mkdir -p `dirname $2`
+	rm $2 > /dev/null ; ln -s $SCRIPT_DIR/$1 $2
 }
 
 link .vimrc ~/.vimrc
