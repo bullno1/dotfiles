@@ -5,7 +5,7 @@ SCRIPT_DIR=`dirname $SCRIPT_PATH`
 link()
 {
 	mkdir -p `dirname $2`
-	rm $2 > /dev/null ; ln -s $SCRIPT_DIR/$1 $2
+	rm $2 > /dev/null 2> /dev/null ; ln -s $SCRIPT_DIR/$1 $2
 }
 
 link .vimrc ~/.vimrc
