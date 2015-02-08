@@ -18,7 +18,7 @@ Plugin 'groenewege/vim-less'
 Plugin 'tikhomirov/vim-glsl'
 Plugin 'uarun/vim-protobuf'
 Plugin 'bling/vim-airline'
-Plugin 'jpalardy/vim-slime'
+Plugin 'epeli/slimux'
 Plugin 'derekwyatt/vim-scala'
 Plugin 'lukerandall/haskellmode-vim'
 Plugin 'vim-scripts/DetectIndent'
@@ -42,13 +42,29 @@ filetype plugin indent on
 " --- Plugin configurations ---
 " Gundo
 nnoremap <C-u> :GundoToggle<CR>
+
 " CtrlP
 nmap <leader>p :CtrlP<CR>
-" vim-slime
-let g:slime_target = "tmux"
+
+" slimux
+map <C-c><C-c> :SlimuxREPLSendLine<CR>
+vmap <C-c><C-c> :SlimuxREPLSendSelection<CR>
+map <C-c><C-v> :SlimuxREPLConfigure<CR>
+let g:slimux_select_from_current_window = 1
+
+function! SlimuxEscape_ocaml(text)
+	let trimmed = substitute(a:text, '\_s*$', '', '')
+	if match(trimmed,';;\n*$') > -1
+		return join([trimmed,"\n"])
+	else
+		return join([trimmed,";;\n"])
+	endif
+endfunction
+
 " DetectIndent
 autocmd BufReadPost *.hs :DetectIndent
 let g:detectindent_preferred_indent = 4
+
 " vim-django
 autocmd BufReadPost *.dtl :set ft=htmldjango
 
