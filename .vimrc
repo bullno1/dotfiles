@@ -25,6 +25,7 @@ Plugin 'vim-scripts/DetectIndent'
 Plugin 'vim-scripts/django.vim'
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'junegunn/goyo.vim'
+Plugin 'mileszs/ack.vim'
 call vundle#end()
 
 " opam
@@ -68,6 +69,11 @@ let g:detectindent_preferred_indent = 4
 
 " vim-django
 autocmd BufReadPost *.dtl :set ft=htmldjango
+
+" ack.vim
+if executable('ag')
+	let g:ackprg = 'ag --vimgrep'
+endif
 
 " --- General ---
 set history=700
