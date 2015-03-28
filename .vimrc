@@ -83,6 +83,8 @@ set ff=unix
 set laststatus=2
 " Show a color column
 set cc=80
+" Don't fold by default
+set foldlevel=99
 
 set guioptions-=m
 set guioptions-=T
