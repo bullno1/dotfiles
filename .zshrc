@@ -99,3 +99,6 @@ fi
 if [ -f ~/.opam/opam-init/init.zsh ]; then
 	. ~/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
 fi
+
+# OS X configuration
+command -v brew > /dev/null && export PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/bin:$PATH"
