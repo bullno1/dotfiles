@@ -64,7 +64,7 @@ function! SlimuxEscape_ocaml(text)
 endfunction
 
 " DetectIndent
-autocmd BufReadPost *.hs :DetectIndent
+autocmd BufReadPost *.hs,*.m,*.mm :DetectIndent
 let g:detectindent_preferred_indent = 4
 
 " vim-django
