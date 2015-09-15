@@ -48,7 +48,6 @@ unsetopt autonamedirs
 
 # Customize to your needs...
 export EDITOR=vim
-export ERL_LIBS=~/Libraries
 
 case "$TERM" in
 	'xterm') TERM=xterm-256color;;
