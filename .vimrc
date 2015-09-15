@@ -26,6 +26,8 @@ Plugin 'vim-scripts/django.vim'
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'junegunn/goyo.vim'
 Plugin 'mileszs/ack.vim'
+Plugin 'aklt/plantuml-syntax'
+Plugin 'octref/RootIgnore'
 call vundle#end()
 
 " opam
