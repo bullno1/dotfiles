@@ -86,7 +86,6 @@ function stouch() {
 }
 
 alias gitroot='cd $(git rev-parse --show-toplevel)'
-alias fuck='eval $(thefuck $(fc -ln -1))'
 
 # Autostart tmux if the shell is interactive
 if command -v tmux > /dev/null; then
