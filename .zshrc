@@ -70,6 +70,9 @@ alias ls='ls --color=tty --group-directories-first'
 # Make Ctrl+S work
 stty -ixon
 
+# Make tab width 4 spaces
+tabs -4
+
 # Convenient bindings
 
 function ssht(){
