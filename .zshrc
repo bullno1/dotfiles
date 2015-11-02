@@ -101,3 +101,7 @@ command -v brew > /dev/null && export PATH="$(brew --prefix coreutils)/libexec/g
 
 # JRE configuration
 export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel -Dswing.systemlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
+
+# gpg-agent
+gpg-agent --daemon --enable-ssh-support > /dev/null 2> /dev/null
+export SSH_AUTH_SOCK=~/.gnupg/S.gpg-agent.ssh
