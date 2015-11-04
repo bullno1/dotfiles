@@ -99,7 +99,7 @@ set mouse=a
 
 " Quick reload of .vimrc
 nmap <leader>sv :source\ $MYVIMRC<Cr>
-set wildignore+=*.so,*.swp,*.beam,.git,.hg,.svn,*.class,*.pyc,*.o,*.luac,*/build/*,bower_components,node_modules
+set wildignore+=*.so,*.swp,*.beam,.git,.hg,.svn,*.class,*.pyc,*.o,*.luac,*/build/*,bower_components,node_modules,*.ttf
 
 " --- Interface ---
 set number
