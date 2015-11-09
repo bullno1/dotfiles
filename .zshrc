@@ -104,5 +104,7 @@ export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswi
 export GRADLE_OPTS='-Dorg.gradle.daemon=true -Dorg.gradle.parallel=true'
 
 # gpg-agent
-gpg-agent --daemon --enable-ssh-support > /dev/null 2> /dev/null
-export SSH_AUTH_SOCK=~/.gnupg/S.gpg-agent.ssh
+if [ -z "$SSH_TTY" ]; then
+	gpg-agent --daemon --enable-ssh-support > /dev/null 2> /dev/null
+	export SSH_AUTH_SOCK=~/.gnupg/S.gpg-agent.ssh
+fi
