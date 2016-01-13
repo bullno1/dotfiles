@@ -25,6 +25,7 @@ Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'mileszs/ack.vim'
 Plugin 'aklt/plantuml-syntax'
 Plugin 'octref/RootIgnore'
+Plugin 'kchmck/vim-coffee-script'
 call vundle#end()
 
 filetype plugin indent on
