@@ -101,7 +101,14 @@ command -v brew > /dev/null && export PATH="$(brew --prefix coreutils)/libexec/g
 
 # JRE configuration
 export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel -Dswing.systemlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
+export GRADLE_OPTS='-Dorg.gradle.daemon=true -Dorg.gradle.parallel=true'
 
 # gpg-agent
-gpg-agent --daemon --enable-ssh-support > /dev/null 2> /dev/null
-export SSH_AUTH_SOCK=~/.gnupg/S.gpg-agent.ssh
+if [ -z "$SSH_TTY" ]; then
+	gpg-agent --daemon --enable-ssh-support > /dev/null 2> /dev/null
+	export SSH_AUTH_SOCK=~/.gnupg/S.gpg-agent.ssh
+fi
+
+# rvm
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*

@@ -25,6 +25,8 @@ Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'mileszs/ack.vim'
 Plugin 'aklt/plantuml-syntax'
 Plugin 'octref/RootIgnore'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'vim-airline/vim-airline-themes'
 call vundle#end()
 
 filetype plugin indent on
@@ -99,7 +101,7 @@ set mouse=a
 
 " Quick reload of .vimrc
 nmap <leader>sv :source\ $MYVIMRC<Cr>
-set wildignore+=*.so,*.swp,*.beam,.git,.hg,.svn,*.class,*.pyc,*.o,*.luac,*/build/*,bower_components,node_modules
+set wildignore+=*.so,*.swp,*.beam,.git,.hg,.svn,*.class,*.pyc,*.o,*.luac,*/build/*,bower_components,node_modules,*.ttf
 
 " --- Interface ---
 set number
