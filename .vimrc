@@ -187,6 +187,7 @@ nmap <leader>p :CtrlP<CR>
 "--- Plugin settings ---
 let g:airline_theme='jellybeans'
 let g:airline#extensions#ctrlp#color_template = 'normal'
+let g:airline#extensions#whitespace#enabled = 0
 nnoremap <leader>jd :YcmCompleter GoTo<CR>
 
 function! YRRunAfterMaps()
