@@ -46,6 +46,11 @@ CPU2:${platform coretemp.0/hwmon/hwmon1 temp 2}C${alignr 175}${cpu cpu2}% ${cpub
 CPU3:${platform coretemp.0/hwmon/hwmon1 temp 3}C${alignr 175}${cpu cpu3}% ${cpubar cpu3}
 CPU4:${platform coretemp.0/hwmon/hwmon1 temp 4}C${alignr 175}${cpu cpu4}% ${cpubar cpu4}
 
+${template0 GFX}
+GPU Frequency:${alignr}${nvidia gpufreq} MHz
+Temperature:${alignr}${nvidia temp} C
+Memory Frequency:${alignr}${nvidia memfreq} MHz
+
 ${template0 Memory}
 ${alignc}$mem / $memmax ${alignr}$memperc%
 ${membar 6}
@@ -72,4 +77,4 @@ ${template2 3}
 ${template2 4}${color}
 
 ${template0 Ethernet}
-${template3 enp8s0}
+${template3 enp9s0}
