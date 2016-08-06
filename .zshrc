@@ -106,7 +106,7 @@ export GRADLE_OPTS='-Dorg.gradle.daemon=true -Dorg.gradle.parallel=true'
 # gpg-agent
 if [ -z "$SSH_TTY" ]; then
 	gpg-agent --daemon --enable-ssh-support > /dev/null 2> /dev/null
-	export SSH_AUTH_SOCK=~/.gnupg/S.gpg-agent.ssh
+	export SSH_AUTH_SOCK="/run/user/$UID/gnupg/S.gpg-agent.ssh"
 fi
 
 # rvm
