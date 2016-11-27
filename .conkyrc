@@ -55,10 +55,6 @@ ${template0 Memory}
 ${alignc}$mem / $memmax ${alignr}$memperc%
 ${membar 6}
 
-${template0 Swap}
-${alignc}$swap/$swapmax ${alignr}$swapperc%
-${swapbar 6}
-
 ${template0 Disk}
 ${alignc}${fs_used /} / ${fs_size /} $alignr ${fs_used_perc /}%
 ${fs_bar 6 /}
@@ -68,13 +64,15 @@ Name ${alignr}CPU
 ${template1 1}${color darkgray}
 ${template1 2}
 ${template1 3}
-${template1 4}${color}
+${template1 4}
+${template1 5}${color}
 
 Name ${alignr} Mem
 ${template2 1}${color darkgray}
 ${template2 2}
 ${template2 3}
-${template2 4}${color}
+${template2 4}
+${template2 5}${color}
 
 ${template0 Ethernet}
 ${template3 enp9s0}
