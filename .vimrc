@@ -5,7 +5,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 
 call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
-Plugin 'kien/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'vim-scripts/YankRing.vim'
 Plugin 'sjl/gundo.vim'
 Plugin 'jimenezrick/vimerl'
@@ -34,6 +34,7 @@ nnoremap <C-u> :GundoToggle<CR>
 
 " CtrlP
 nmap <leader>p :CtrlP<CR>
+nmap <leader>. :CtrlPTag<CR>
 
 " slimux
 map <C-c><C-c> :SlimuxREPLSendLine<CR>
