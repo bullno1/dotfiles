@@ -24,6 +24,7 @@ Plugin 'mileszs/ack.vim'
 Plugin 'octref/RootIgnore'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'vim-airline/vim-airline-themes'
+Plugin 'fatih/vim-hclfmt'
 call vundle#end()
 
 filetype plugin indent on
