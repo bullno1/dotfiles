@@ -29,6 +29,8 @@ Plugin 'kchmck/vim-coffee-script'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'fatih/vim-hclfmt'
 Plugin 'jparise/vim-graphql'
+Plugin 'junegunn/goyo.vim'
+Plugin 'leafgarland/typescript-vim'
 call vundle#end()
 
 filetype plugin indent on
@@ -104,7 +106,7 @@ set mouse=a
 
 " Quick reload of .vimrc
 nmap <leader>sv :source\ $MYVIMRC<Cr>
-set wildignore+=*.so,*.swp,*.beam,.git,.hg,.svn,*.class,*.pyc,*.o,*.luac,*/build/*,bower_components,node_modules,*.ttf
+set wildignore+=*.so,*.swp,*.beam,.git,.hg,.svn,*.class,*.pyc,*.o,*.luac,*/build/*,bower_components,node_modules,*.ttf,deps
 
 " --- Interface ---
 set nonumber
