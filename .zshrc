@@ -116,7 +116,7 @@ export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 # pyenv
 if command -v pyenv 1> /dev/null
 then
-	eval "$(pyenv init -)"
+	eval "$(pyenv init --path)"
 fi
 
 if [ -f "/usr/share/nvm/init-nvm.sh" ]; then

@@ -6,7 +6,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 Plugin 'editorconfig/editorconfig-vim'
-Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'kien/ctrlp.vim'
 Plugin 'vim-scripts/YankRing.vim'
 Plugin 'sjl/gundo.vim'
 Plugin 'vim-erlang/vim-erlang-runtime'
@@ -16,20 +16,13 @@ Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'nanotech/jellybeans.vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/nerdcommenter'
-Plugin 'groenewege/vim-less'
-Plugin 'tikhomirov/vim-glsl'
 Plugin 'bling/vim-airline'
 Plugin 'epeli/slimux'
 Plugin 'vim-scripts/DetectIndent'
-Plugin 'vim-scripts/django.vim'
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'mileszs/ack.vim'
 Plugin 'octref/RootIgnore'
-Plugin 'kchmck/vim-coffee-script'
 Plugin 'vim-airline/vim-airline-themes'
-Plugin 'fatih/vim-hclfmt'
-Plugin 'jparise/vim-graphql'
-Plugin 'junegunn/goyo.vim'
 Plugin 'leafgarland/typescript-vim'
 call vundle#end()
 
@@ -38,6 +31,9 @@ filetype plugin indent on
 " --- Plugin configurations ---
 " Gundo
 nnoremap <C-u> :GundoToggle<CR>
+if has('python3')
+    let g:gundo_prefer_python3 = 1
+endif
 
 " CtrlP
 nmap <leader>p :CtrlP<CR>
