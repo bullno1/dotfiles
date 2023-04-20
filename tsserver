@@ -1,0 +1,7 @@
+#!/bin/sh -e
+
+which_exec() {
+	which $1 > /dev/null && exec $*
+}
+
+which_exec yarn exec tsserver || which_exec pnpm exec tsserver

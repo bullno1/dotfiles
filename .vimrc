@@ -190,6 +190,7 @@ let g:airline_theme='jellybeans'
 let g:airline#extensions#ctrlp#color_template = 'normal'
 let g:airline#extensions#whitespace#enabled = 0
 nnoremap <leader>jd :YcmCompleter GoTo<CR>
+let g:ycm_tsserver_binary_path = expand('~/bin/tsserver')
 
 function! YRRunAfterMaps()
     " Don't clobber the yank register when pasting over text in visual mode.

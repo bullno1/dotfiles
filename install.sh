@@ -16,3 +16,4 @@ link gpg-agent.conf ~/.gnupg/gpg-agent.conf
 link .conkyrc ~/.conkyrc
 link .2.conkyrc ~/.2.conkyrc
 link alacritty.yml ~/.config/alacritty/alacritty.yml
+link tsserver ~/bin/tsserver
