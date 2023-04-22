@@ -1,0 +1,13 @@
+[Unit]
+Description=Watch yubikey for touch request
+Wants=yubikey-touch-detector.socket
+
+[Service]
+Type=simple
+WorkingDirectory=%h
+ExecStart=%h/bin/yubikey-watch
+CPUSchedulingPolicy=idle
+IOSchedulingClass=3
+
+[Install]
+WantedBy=default.target

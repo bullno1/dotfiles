@@ -2,8 +2,8 @@
 
 SCRIPT_PATH=`readlink -f $0`
 SCRIPT_DIR=`dirname $SCRIPT_PATH`
-link()
-{
+
+link() {
 	mkdir -p `dirname $2`
 	rm $2 > /dev/null 2> /dev/null ; ln -s $SCRIPT_DIR/$1 $2
 }
@@ -17,3 +17,5 @@ link .conkyrc ~/.conkyrc
 link .2.conkyrc ~/.2.conkyrc
 link alacritty.yml ~/.config/alacritty/alacritty.yml
 link tsserver ~/bin/tsserver
+link yubikey-watch ~/bin/yubikey-watch
+link yubikey-watch.service ~/.config/systemd/user/yubikey-watch.service

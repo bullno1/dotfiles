@@ -1,0 +1,35 @@
+#!/bin/sh -e
+
+SOCKET="${XDG_RUNTIME_DIR:-/run/user/$UID}/yubikey-touch-detector.socket"
+
+main() {
+	listen $SOCKET
+}
+
+listen() {
+	socat -U -b5 - UNIX-CONNECT:$1 | while read -N 5 cmd
+	do
+		case $cmd in
+			"GPG_1")
+				echo "Touch request started"
+				tmux_broadcast "Yubikey is waiting for touch"
+				;;
+			"GPG_0")
+				echo "Touch request ended"
+				tmux_clear
+				;;
+		esac
+	done
+}
+
+tmux_broadcast() {
+	tmux list-clients -F "#{client_name}" \
+		| xargs -I{} tmux display-message -c {} -d 0 "$1"
+}
+
+tmux_clear() {
+	tmux list-clients -F "#{client_name}" \
+		| xargs -I{} tmux display-message -c {} -d 1 "1"
+}
+
+main $*
