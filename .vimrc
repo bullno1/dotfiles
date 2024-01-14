@@ -192,6 +192,17 @@ let g:airline#extensions#whitespace#enabled = 0
 nnoremap <leader>jd :YcmCompleter GoTo<CR>
 let g:ycm_tsserver_binary_path = expand('~/bin/tsserver')
 
+if filereadable("deno.json")
+	let g:ycm_language_server =
+	  \ [
+	  \   {
+	  \     'name': 'deno',
+	  \     'cmdline': [ 'deno', 'lsp' ],
+	  \     'filetypes': [ 'typescript' ]
+	  \   }
+	  \ ]
+endif
+
 function! YRRunAfterMaps()
     " Don't clobber the yank register when pasting over text in visual mode.
     vnoremap p :<c-u>YRPaste 'p', 'v'<cr>gv:YRYankRange 'v'<cr>
