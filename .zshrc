@@ -49,12 +49,6 @@ unsetopt autonamedirs
 # Customize to your needs...
 export EDITOR=vim
 
-case "$TERM" in
-	'xterm') TERM=xterm-256color;;
-	'screen') TERM=screen-256color;;
-esac
-export TERM
-
 zbell_ignore=($EDITOR $PAGER ls watch htop top ssh ssht rlwrap iotop dstat vmstat nano emacs vi vimdiff bwm-ng less more fdisk sqlite3 wine ping traceroute tail tmux screen man powertop git ocaml)
 
 zbell_notify() {
