@@ -198,7 +198,8 @@ if filereadable("deno.json")
 	  \   {
 	  \     'name': 'deno',
 	  \     'cmdline': [ 'deno', 'lsp' ],
-	  \     'filetypes': [ 'typescript' ]
+	  \     'filetypes': [ 'typescript' ],
+	  \     'project_root_files': [ 'deno.json' ],
 	  \   }
 	  \ ]
 endif
