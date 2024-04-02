@@ -19,3 +19,5 @@ link alacritty.yml ~/.config/alacritty/alacritty.yml
 link tsserver ~/bin/tsserver
 link yubikey-watch ~/bin/yubikey-watch
 link yubikey-watch.service ~/.config/systemd/user/yubikey-watch.service
+link kitty.conf ~/.config/kitty/kitty.conf
+link current-theme.conf ~/.config/kitty/current-theme.conf
