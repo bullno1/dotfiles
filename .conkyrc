@@ -41,10 +41,10 @@ Uptime:$alignr$uptime
 
 ${template0 Processors}
 ${cpugraph cpu0 32,280 33ffff 0000ff}
-CPU1:${platform coretemp.0/hwmon/hwmon1 temp 1}C${alignr 175}${cpu cpu1}% ${cpubar cpu1}
-CPU2:${platform coretemp.0/hwmon/hwmon1 temp 2}C${alignr 175}${cpu cpu2}% ${cpubar cpu2}
-CPU3:${platform coretemp.0/hwmon/hwmon1 temp 3}C${alignr 175}${cpu cpu3}% ${cpubar cpu3}
-CPU4:${platform coretemp.0/hwmon/hwmon1 temp 4}C${alignr 175}${cpu cpu4}% ${cpubar cpu4}
+CPU1:${platform coretemp.0/hwmon/hwmon3 temp 1}C${alignr 175}${cpu cpu1}% ${cpubar cpu1}
+CPU2:${platform coretemp.0/hwmon/hwmon3 temp 2}C${alignr 175}${cpu cpu2}% ${cpubar cpu2}
+CPU3:${platform coretemp.0/hwmon/hwmon3 temp 3}C${alignr 175}${cpu cpu3}% ${cpubar cpu3}
+CPU4:${platform coretemp.0/hwmon/hwmon3 temp 4}C${alignr 175}${cpu cpu4}% ${cpubar cpu4}
 
 ${template0 GFX}
 GPU Frequency:${alignr}${nvidia gpufreq} MHz
@@ -75,4 +75,4 @@ ${template2 4}
 ${template2 5}${color}
 
 ${template0 Ethernet}
-${template3 enp11s0}
+${template3 enp3s0}
