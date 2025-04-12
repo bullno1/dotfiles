@@ -17,14 +17,13 @@ Plugin 'nanotech/jellybeans.vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'bling/vim-airline'
-Plugin 'epeli/slimux'
 Plugin 'vim-scripts/DetectIndent'
 Plugin 'ntpeters/vim-better-whitespace'
-Plugin 'mileszs/ack.vim'
 Plugin 'octref/RootIgnore'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'kaarmu/typst.vim'
+Plugin 'bellinitte/uxntal.vim'
 call vundle#end()
 
 filetype plugin indent on
