@@ -24,6 +24,7 @@ Plugin 'mileszs/ack.vim'
 Plugin 'octref/RootIgnore'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'leafgarland/typescript-vim'
+Plugin 'kaarmu/typst.vim'
 call vundle#end()
 
 filetype plugin indent on
@@ -129,7 +130,7 @@ endif
 
 " Quick reload of .vimrc
 nmap <leader>sv :source\ $MYVIMRC<Cr>
-set wildignore+=*.so,*.swp,*.beam,.git,.hg,.svn,*.class,*.pyc,*.o,*.luac,*/build/*,bower_components,node_modules,*.ttf,deps
+set wildignore+=*.so,*.swp,*.beam,.git,.hg,.svn,*.class,*.pyc,*.o,*.luac,*/build/*,bower_components,node_modules,deps
 
 " --- Interface ---
 set nonumber
@@ -218,6 +219,8 @@ let g:airline#extensions#ctrlp#color_template = 'normal'
 let g:airline#extensions#whitespace#enabled = 0
 nnoremap <leader>jd :YcmCompleter GoTo<CR>
 let g:ycm_tsserver_binary_path = expand('~/bin/tsserver')
+let g:ycm_always_populate_location_list = 1
+let g:ycm_clangd_args=['--header-insertion=never']
 
 if filereadable("deno.json")
 	let g:ycm_language_server =
@@ -229,9 +232,18 @@ if filereadable("deno.json")
 	  \     'project_root_files': [ 'deno.json' ],
 	  \   }
 	  \ ]
+else
+	let g:ycm_language_server =
+	  \ [
+	  \   {
+	  \     'name': 'typst',
+	  \     'cmdline': [ 'typst-lsp' ],
+	  \     'filetypes': [ 'typst' ]
+	  \   }
+	  \ ]
 endif
 
 function! YRRunAfterMaps()
     " Don't clobber the yank register when pasting over text in visual mode.
-    vnoremap p :<c-u>YRPaste 'p', 'v'<cr>gv:YRYankRange 'v'<cr>
+    vnoremap p P
 endfunction

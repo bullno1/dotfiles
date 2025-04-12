@@ -1,4 +1,5 @@
 use_xft yes
+override_utf8_locale yes
 xftfont Hermit:normal:size=9
 xftalpha 0.8
 update_interval 1.0
@@ -17,15 +18,14 @@ draw_graph_borders yes
 stippled_borders 8
 border_width 1
 maximum_width 280
-default_color black
+default_color white
 alignment top_left
-gap_x 80
-gap_y 50
+gap_x 20
+gap_y 40
 no_buffers yes
 uppercase no
 cpu_avg_samples 2
 net_avg_samples 2
-override_utf8_locale no
 use_spacer left
 
 #Templates
@@ -33,6 +33,7 @@ template0 ${font Hermit:bold:size=9}\1 ${hr 2}${font}
 template1 ${top name \1} ${alignr}${top cpu \1}
 template2 ${top_mem name \1} ${alignr}${top_mem mem \1}
 template3 Address: ${addr \1}\n${downspeedgraph \1 99cc33 006600}\nDownSpeed: $alignc ${downspeed \1} $alignr total: ${totaldown \1}\n${upspeedgraph \1 ffcc00 ff0000}\nUpSpeed: $alignc ${upspeed \1} $alignr total: ${totalup \1}
+template4 ${cpubar cpu\2 9,100}${platform coretemp.0/hwmon/hwmon5 temp \1}°C
 
 TEXT
 ${font Hermit:bold:size=9}$sysname $kernel $alignr $machine${hr 2}${font}
@@ -40,15 +41,21 @@ Host:$alignr$nodename
 Uptime:$alignr$uptime
 
 ${template0 Processors}
+Temperature: ${platform coretemp.0/hwmon/hwmon5 temp 1}°C
 ${cpugraph cpu0 32,280 33ffff 0000ff}
-CPU1:${platform coretemp.0/hwmon/hwmon3 temp 1}C${alignr 175}${cpu cpu1}% ${cpubar cpu1}
-CPU2:${platform coretemp.0/hwmon/hwmon3 temp 2}C${alignr 175}${cpu cpu2}% ${cpubar cpu2}
-CPU3:${platform coretemp.0/hwmon/hwmon3 temp 3}C${alignr 175}${cpu cpu3}% ${cpubar cpu3}
-CPU4:${platform coretemp.0/hwmon/hwmon3 temp 4}C${alignr 175}${cpu cpu4}% ${cpubar cpu4}
+
+${template4 2 1} ${template4 6 3}
+${template4 10 5} ${template4 14 7}
+${template4 18 9} ${template4 22 11}
+${template4 26 13} ${template4 30 15}
+${template4 34 17} ${template4 35 18}
+${template4 36 19} ${template4 37 20}
+${template4 38 21} ${template4 39 22}
+${template4 40 23} ${template4 41 24}
 
 ${template0 GFX}
+Temperature:${alignr}${nvidia temp}°C
 GPU Frequency:${alignr}${nvidia gpufreq} MHz
-Temperature:${alignr}${nvidia temp} C
 Memory Frequency:${alignr}${nvidia memfreq} MHz
 
 ${template0 Memory}
