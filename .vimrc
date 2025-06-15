@@ -9,9 +9,6 @@ Plugin 'editorconfig/editorconfig-vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'vim-scripts/YankRing.vim'
 Plugin 'sjl/gundo.vim'
-Plugin 'vim-erlang/vim-erlang-runtime'
-Plugin 'vim-erlang/vim-erlang-compiler'
-Plugin 'vim-erlang/vim-erlang-omnicomplete'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'nanotech/jellybeans.vim'
 Plugin 'Valloric/YouCompleteMe'
@@ -24,6 +21,7 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'kaarmu/typst.vim'
 Plugin 'bellinitte/uxntal.vim'
+Plugin 'jiangmiao/auto-pairs'
 call vundle#end()
 
 filetype plugin indent on
@@ -216,10 +214,16 @@ nmap <leader>p :CtrlP<CR>
 let g:airline_theme='jellybeans'
 let g:airline#extensions#ctrlp#color_template = 'normal'
 let g:airline#extensions#whitespace#enabled = 0
-nnoremap <leader>jd :YcmCompleter GoTo<CR>
 let g:ycm_tsserver_binary_path = expand('~/bin/tsserver')
 let g:ycm_always_populate_location_list = 1
 let g:ycm_clangd_args=['--header-insertion=never']
+set updatetime=1500  " Hover delay
+nmap <leader>fw <Plug>(YCMFindSymbolInWorkspace)
+nmap <leader>fd <Plug>(YCMFindSymbolInDocument)
+nnoremap <leader>jd :YcmCompleter GoTo<CR>
+nnoremap <leader>jr :YcmCompleter GoToReferences<CR>
+nnoremap <leader>jn :lnext<CR>
+nnoremap <leader>jp :lprev<CR>
 
 if filereadable("deno.json")
 	let g:ycm_language_server =
@@ -238,6 +242,11 @@ else
 	  \     'name': 'typst',
 	  \     'cmdline': [ 'typst-lsp' ],
 	  \     'filetypes': [ 'typst' ]
+	  \   },
+	  \   {
+	  \     'name': 'uxntal',
+	  \     'cmdline': [ '/home/bullno1/Projects/buxn-ls/bin/Debug/buxn-ls', '--mode=dev' ],
+	  \     'filetypes': [ 'uxntal' ]
 	  \   }
 	  \ ]
 endif

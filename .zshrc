@@ -75,7 +75,7 @@ function ssht(){
 
 function activate-venv() {
 	VENVDIR=${1:-~/venv}
-	source $VENVDIR/bin/activate
+# source $VENVDIR/bin/activate  # commented out by conda initialize
 }
 
 function stouch() {
@@ -91,7 +91,7 @@ if command -v tmux > /dev/null; then
 fi
 
 # OS X configuration
-command -v brew > /dev/null && export PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/bin:$PATH"
+#command -v brew > /dev/null && export PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/bin:$PATH"
 
 # JRE configuration
 export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel -Dswing.systemlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
@@ -101,38 +101,38 @@ export GRADLE_OPTS='-Dorg.gradle.daemon=true -Dorg.gradle.parallel=true'
 export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
 
 # rvm
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" || true # Load RVM into a shell session *as a function*
+#export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+#[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" || true # Load RVM into a shell session *as a function*
 
-# pyenv
-if command -v pyenv 1> /dev/null
-then
-	eval "$(pyenv init --path)"
-fi
+## pyenv
+#if command -v pyenv 1> /dev/null
+#then
+	#eval "$(pyenv init --path)"
+#fi
 
-if [ -f "/usr/share/nvm/init-nvm.sh" ]; then
-	source /usr/share/nvm/init-nvm.sh
-	autoload -U add-zsh-hook
+#if [ -f "/usr/share/nvm/init-nvm.sh" ]; then
+	#source /usr/share/nvm/init-nvm.sh
+	#autoload -U add-zsh-hook
 
-	load-nvmrc() {
-		local nvmrc_path
-		nvmrc_path="$(nvm_find_nvmrc)"
+	#load-nvmrc() {
+		#local nvmrc_path
+		#nvmrc_path="$(nvm_find_nvmrc)"
 
-		if [ -n "$nvmrc_path" ]; then
-			local nvmrc_node_version
-			nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
+		#if [ -n "$nvmrc_path" ]; then
+			#local nvmrc_node_version
+			#nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
 
-			if [ "$nvmrc_node_version" = "N/A" ]; then
-				nvm install
-			elif [ "$nvmrc_node_version" != "$(nvm version)" ]; then
-				nvm use
-			fi
-		elif [ -n "$(PWD=$OLDPWD nvm_find_nvmrc)" ] && [ "$(nvm version)" != "$(nvm version default)" ]; then
-			echo "Reverting to nvm default version"
-			nvm use default
-		fi
-	}
+			#if [ "$nvmrc_node_version" = "N/A" ]; then
+				#nvm install
+			#elif [ "$nvmrc_node_version" != "$(nvm version)" ]; then
+				#nvm use
+			#fi
+		#elif [ -n "$(PWD=$OLDPWD nvm_find_nvmrc)" ] && [ "$(nvm version)" != "$(nvm version default)" ]; then
+			#echo "Reverting to nvm default version"
+			#nvm use default
+		#fi
+	#}
 
-	add-zsh-hook chpwd load-nvmrc
-	load-nvmrc
-fi
+	#add-zsh-hook chpwd load-nvmrc
+	#load-nvmrc
+#fi
