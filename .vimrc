@@ -217,6 +217,7 @@ let g:airline#extensions#whitespace#enabled = 0
 let g:ycm_tsserver_binary_path = expand('~/bin/tsserver')
 let g:ycm_always_populate_location_list = 1
 let g:ycm_clangd_args=['--header-insertion=never']
+let g:ycm_clangd_binary_path=expand('clangd')
 set updatetime=1500  " Hover delay
 nmap <leader>fw <Plug>(YCMFindSymbolInWorkspace)
 nmap <leader>fd <Plug>(YCMFindSymbolInDocument)
